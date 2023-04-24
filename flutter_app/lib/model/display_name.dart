@@ -1,5 +1,5 @@
 class DisplayNameModel{
-  var lstName = ["Name1", "Name2", "Name3"];
+  var lstName = ["Manisha", "Aarati", "Dinesh"];
 
   String displayName(var index) => lstName[((index % lstName.length))];
 }
