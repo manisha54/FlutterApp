@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/model/arithmetic.dart';
+import 'package:flutter_app/model/circle.dart';
 
 
-class ArithmeticView extends StatefulWidget {
-  const ArithmeticView({super.key});
+class CircleView extends StatefulWidget {
+  const CircleView({super.key});
 
   @override
-  State<ArithmeticView> createState() => _ArithmeticViewState();
+  State<CircleView> createState() => _CircleViewState();
 }
 
-class _ArithmeticViewState extends State<ArithmeticView> {
-  int first =0;
-  int second=0;
-  int result=0;
+class _CircleViewState extends State<CircleView> {
+  double radius=0;
+  double result =0;
 
-  late Arithmetic arithmetic;  
+  late Circle obj; 
 
-  void add(){
-    arithmetic = Arithmetic();
+  void areaofcircle(){
+    obj = Circle();
     setState(() {
-      result = arithmetic.add(first,second);
+      result = obj.areaOfCircle(radius: radius);
     });
   }
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Arithmetic"),
+    return  Scaffold(
+      appBar: AppBar(
+          title:  const Text("Area of circle"),
           centerTitle: true,
           elevation: 0,
         ),
@@ -38,51 +38,42 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                 const SizedBox(height: 8),
                  TextField(
                   onChanged: (value){
-                    first = int.parse(value);
+                    radius = double.parse(value);
 
                   },
                     decoration: const InputDecoration(
-                    hintText: 'Enter first number',
+                    hintText: 'Enter radius ',
                     border: OutlineInputBorder(),
                   ),
                 ), 
-                 const SizedBox(height: 8),
-                 TextField(
-                   onChanged: (value){
-                    second = int.parse(value);
-
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Enter second number',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
+                 
                 const SizedBox(height: 8),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      add();
-                      
+                      areaofcircle();                     
                     },
-                    child: const Text('Add'),
+                    child: const Text('result'),
                   ),
                 ),
                 const SizedBox(height: 8),
                  Text(
-                  "Sum is : $result",
+                  "area of circle is : $result",
                   style: const TextStyle(
                     fontSize: 20,
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.bold,
                   ),
                   ),           
+                 
+                           
               ],
             ),
           ),
         ),
-      );
+        
+
+    );
   }
 }
