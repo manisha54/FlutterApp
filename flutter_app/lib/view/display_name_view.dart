@@ -12,7 +12,7 @@ class DisplayName extends StatefulWidget {
 
 class _DisplayNameState extends State<DisplayName> {
   int counter = 0;
-  String name = "asd";
+  String name = "display name";
   late DisplayNameModel obj;
 
   void changeName(){
