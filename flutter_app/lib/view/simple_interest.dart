@@ -75,6 +75,8 @@ class _SimpleInterestState extends State<SimpleInterest> {
                     validator: (value){
                       if (value!.isEmpty){
                         return ' please enter principal';
+                      }else if (value.length < 2) {
+                        return 'Principal should be greater than 2 digits';
                       }
                       return null;
 

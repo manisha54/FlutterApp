@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/arithmetic.dart';
 
+//for radiobutton 
+enum Arithmeticc{add,sub}
+
 
 class ArithmeticView extends StatefulWidget {
   const ArithmeticView({super.key});
@@ -44,6 +47,22 @@ class _ArithmeticViewState extends State<ArithmeticView> {
     });
   }
 
+
+
+ void sub(){
+    arithmetic = Arithmetic();
+    setState(() {
+      result = arithmetic.sub(
+        int.parse(firstController.text), 
+        int.parse(secondController.text),
+      );
+    });
+  }
+
+
+
+//for radio button
+  Arithmeticc _operation = Arithmeticc.add;
 
   final mykey = GlobalKey<FormState>();
   @override
@@ -94,11 +113,37 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                       if (value!.isEmpty){
                         return 'Please enter second number';
                       }
-                      return null;
-                      
+                      return null; 
                     },
                   ),
                   const SizedBox(height: 8),
+                  
+                 RadioListTile(
+                    value : Arithmeticc.add,
+                    title: const Text("Addiiton"),
+                    groupValue: _operation,
+                    onChanged: (value){
+                      setState(() {
+                        _operation = value!;  //change on next radio button
+                      });
+                    },
+
+                  ),
+
+
+                   RadioListTile(
+                    value : Arithmeticc.sub,
+                    title: const Text("Subtraction"),
+                    groupValue: _operation,
+                    onChanged: (value){
+                      setState(() {
+                        _operation = value!;
+                      });
+                    },
+
+                  ),
+
+
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -116,7 +161,7 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        add();
+                        sub();
                         
                       },
                       child: const Text('Sub'),
@@ -124,7 +169,7 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                   ),
                   const SizedBox(height: 8),
                    Text(
-                    "Sum is : $result",
+                    "Result is : $result",
                     style: const TextStyle(
                       fontSize: 20,
                       fontStyle: FontStyle.italic,
