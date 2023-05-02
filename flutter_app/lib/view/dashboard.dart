@@ -10,6 +10,7 @@ class DashboardView extends StatelessWidget {
         title: const Text('Dashboard'),
         centerTitle: true,
         elevation: 0,
+        backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -26,7 +27,7 @@ class DashboardView extends StatelessWidget {
             const SizedBox(height: 8),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/aithmeticRoute' );
+                Navigator.pushNamed(context, '/arithmeticRoute' );
               },
               child: const Text('Arithmetic'),
             ),

@@ -22,7 +22,7 @@ class App extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/' : (context) => const DashboardView(),
-        '/aithmeticRoute' : (context) => const ArithmeticView(),
+        '/arithmeticRoute' : (context) => const ArithmeticView(),
         '/SimpleInterest' : (context) => const SimpleInterest(),
         '/AreaOfCircle' : (context) => const CircleView(),
         '/displayname' : (context) => const DisplayName(),

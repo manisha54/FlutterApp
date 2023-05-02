@@ -26,7 +26,7 @@ class _RichTextState extends State<RichTextView> {
           ),
           children: <TextSpan>[
             TextSpan(
-              text: 'Manisha',
+              text: ' Manisha',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.amber,
