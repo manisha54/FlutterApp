@@ -24,8 +24,11 @@ class _OutputViewState extends State<OutputView> {
           elevation: 0,
 
       ),
-      body: const Center(
-        child: Text('null'),
+      body:  Center(
+        child: Text(
+          'result is : ${result.toString()}',
+          style: const TextStyle(fontSize: 30),
+        ),
         
       ),
 

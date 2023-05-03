@@ -5,10 +5,12 @@ import 'package:flutter_app/view/column_view.dart';
 import 'package:flutter_app/view/container_screen.dart';
 import 'package:flutter_app/view/dashboard.dart';
 import 'package:flutter_app/view/display_name_view.dart';
+import 'package:flutter_app/view/edit_student_detail.dart';
 import 'package:flutter_app/view/load_image.dart';
 import 'package:flutter_app/view/output_view.dart';
 import 'package:flutter_app/view/rich_text_view.dart';
 import 'package:flutter_app/view/simple_interest.dart';
+import 'package:flutter_app/view/student_view.dart';
 
 //import 'view/simple_interest.dart';
 
@@ -34,6 +36,8 @@ class App extends StatelessWidget {
         '/outputview' : (context) => const OutputView(),
         '/containerview' : (context) => const ContainerView(),
         '/loadimageview' : (context) => const LoadImageView(),
+        '/studentdetailview' : (context) => const StudentDetailView(),
+        '/editstudentdetailview' : (context) => const EditStudentDetailview(),
         
       },
       

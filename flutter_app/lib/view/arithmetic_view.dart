@@ -115,7 +115,7 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                       labelText: 'Enter second number',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                      ),
+                       ),
                     ),
                     validator: (value){
                       if (value!.isEmpty){
