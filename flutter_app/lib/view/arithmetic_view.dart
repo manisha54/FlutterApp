@@ -45,6 +45,11 @@ class _ArithmeticViewState extends State<ArithmeticView> {
         int.parse(secondController.text),
       );
     });
+    Navigator.pushNamed(
+      context, 
+      '/outputview',
+      arguments: result,
+      );
   }
 
 
@@ -57,6 +62,9 @@ class _ArithmeticViewState extends State<ArithmeticView> {
         int.parse(secondController.text),
       );
     });
+    Navigator.pushNamed(context,
+     '/outputview',
+     arguments: result);
   }
 
 
@@ -167,6 +175,7 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                       child: const Text('Sub'),
                     ),
                   ),
+                  
                   const SizedBox(height: 8),
                    Text(
                     "Result is : $result",
