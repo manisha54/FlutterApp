@@ -33,11 +33,11 @@ Gendergroup _gender = Gendergroup.female ;
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            children:  [
+            children: [
               const SizedBox(height: 9),
               const TextField(
                 decoration: InputDecoration(
-                hintText: "First Name",
+                labelText: "First Name",
                 border: OutlineInputBorder()
 
                 ),
@@ -46,7 +46,7 @@ Gendergroup _gender = Gendergroup.female ;
               const SizedBox(height: 9),
               const TextField(
                 decoration: InputDecoration(
-                hintText: "Last Name",
+                labelText: "Last Name",
                 border: OutlineInputBorder()
 
                 ),
@@ -54,8 +54,9 @@ Gendergroup _gender = Gendergroup.female ;
               ),
               const SizedBox(height: 9),
               const TextField(
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                hintText: "Age",
+                labelText: "Age",
                 border: OutlineInputBorder()
                 ),
               ),
@@ -99,7 +100,7 @@ Gendergroup _gender = Gendergroup.female ;
               const SizedBox(height: 9),
               const TextField(
                 decoration: InputDecoration(
-                hintText: "Address",
+                labelText: "Address",
                 border: OutlineInputBorder(),
                 contentPadding: EdgeInsets.symmetric(vertical: 50)
                 
@@ -112,9 +113,11 @@ Gendergroup _gender = Gendergroup.female ;
                SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                  //  add();
-                  },
+                  onPressed: () {},
+                   style: TextButton.styleFrom(
+                    foregroundColor: Colors.black, 
+                    backgroundColor:  const Color.fromARGB(255, 55, 211, 201),
+                  ),
                   child: const Text("Save Student"),
                 ),
 
@@ -123,10 +126,16 @@ Gendergroup _gender = Gendergroup.female ;
                SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                  //  add();
-                  },
+                  onPressed: () {},
+                
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.black, 
+                    backgroundColor:  const Color.fromARGB(255, 55, 211, 201),
+                  ),
                   child: const Text("Display Student"),
+                
+                  
+                  
                 ),
 
               ),
