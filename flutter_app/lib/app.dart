@@ -10,6 +10,7 @@ import 'package:flutter_app/view/load_image.dart';
 import 'package:flutter_app/view/output_view.dart';
 import 'package:flutter_app/view/rich_text_view.dart';
 import 'package:flutter_app/view/simple_interest.dart';
+import 'package:flutter_app/view/student_detail.dart';
 import 'package:flutter_app/view/student_view.dart';
 
 //import 'view/simple_interest.dart';
@@ -38,6 +39,7 @@ class App extends StatelessWidget {
         '/loadimageview' : (context) => const LoadImageView(),
         '/studentdetailview' : (context) => const StudentDetailView(),
         '/editstudentdetailview' : (context) => const EditStudentDetailview(),
+        '/studentdetail' : (context) => const StudentsInfo(),
         
       },
       

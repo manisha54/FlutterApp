@@ -17,6 +17,20 @@ class _StudentDetailViewState extends State<StudentDetailView> {
 //for radio buuton
 Gendergroup _gender = Gendergroup.female ;
 
+
+
+//for dropdown
+String selectedCity = 'Kathmandu';
+  final List<String> cities = [
+    'Kathmandu',
+    'Pokhara',
+    'Bardiya',
+    'Dhandagi',
+    'Kailali',
+    'Surkhet',
+    'Butwal',
+  ];
+
  
 
 
@@ -34,43 +48,73 @@ Gendergroup _gender = Gendergroup.female ;
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              const SizedBox(height: 9),
+              const SizedBox(height: 15),
               const TextField(
                 decoration: InputDecoration(
                 labelText: "First Name",
-                border: OutlineInputBorder()
+                contentPadding:
+                EdgeInsets.symmetric(vertical: 16.0, horizontal: 10.0),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                    ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.red,
+                    ),
+                  ),
 
                 ),
+                
 
               ),
-              const SizedBox(height: 9),
+              const SizedBox(height: 15),
               const TextField(
                 decoration: InputDecoration(
                 labelText: "Last Name",
-                border: OutlineInputBorder()
+                contentPadding:
+                EdgeInsets.symmetric(vertical: 16.0, horizontal: 10.0),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                      ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.green,
+                      ),
+                  ),
 
                 ),
 
               ),
-              const SizedBox(height: 9),
+              const SizedBox(height: 15),
               const TextField(
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                 labelText: "Age",
-                border: OutlineInputBorder()
+                contentPadding:
+                EdgeInsets.symmetric(vertical: 16.0, horizontal: 10.0),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                      ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.red,
+                    ),
+                ),
                 ),
               ),
-              const SizedBox(height: 9),
-              const Text(
-                  "Gender",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                    
-                    // fontStyle: FontStyle.italic,
-                    // fontWeight: FontWeight.normal,
-                  ),
-              ), 
+
+              const SizedBox(height: 15),
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: const Text("Select Gender:"),
+  
+                ),
               
               RadioListTile(
                 value: Gendergroup.female,
@@ -83,7 +127,7 @@ Gendergroup _gender = Gendergroup.female ;
                     },
               ),
                       
-              RadioListTile(
+              RadioListTile<Gendergroup>(
                 value: Gendergroup.male,
                 title: const Text("Male"),
                 groupValue: _gender,
@@ -99,14 +143,64 @@ Gendergroup _gender = Gendergroup.female ;
 
               const SizedBox(height: 9),
               const TextField(
+                keyboardType: TextInputType.text,
+                maxLines: null,
+                minLines: 2,
                 decoration: InputDecoration(
-                labelText: "Address",
-                border: OutlineInputBorder(),
-                contentPadding: EdgeInsets.symmetric(vertical: 50)
-                
+                  labelText: "Address",
 
-                ),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(width: 0.5),
+                    borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                    ),                 
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.red,
+                      ),
+                    ),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.purple,
+                      ),
+                  ),
+                contentPadding: EdgeInsets.symmetric(vertical: 15.0,horizontal: 10.0)               
+                ), 
+              ),
 
+//radio button
+              const SizedBox(height: 9),
+              DropdownButtonFormField<String>(
+                value: selectedCity,
+                onChanged: (String? value){
+                  setState(() {
+                    selectedCity = value!;
+                  });
+                },
+                items: cities
+                    .map((city) => DropdownMenuItem(
+                       value: city,
+                       child: Text(city),
+                    ))
+                    .toList(),
+                decoration: const InputDecoration(
+                  labelText: 'Select your city',
+                  contentPadding: EdgeInsets.symmetric(vertical: 15.0,horizontal: 10.0),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.red,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.lightGreen,
+                    ),
+                  ),
+                ), 
               ),
 
               const SizedBox(height: 9),
@@ -117,6 +211,7 @@ Gendergroup _gender = Gendergroup.female ;
                    style: TextButton.styleFrom(
                     foregroundColor: Colors.black, 
                     backgroundColor:  const Color.fromARGB(255, 55, 211, 201),
+                    minimumSize: const Size(double.infinity, 40),
                   ),
                   child: const Text("Save Student"),
                 ),
@@ -131,6 +226,7 @@ Gendergroup _gender = Gendergroup.female ;
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.black, 
                     backgroundColor:  const Color.fromARGB(255, 55, 211, 201),
+                    minimumSize: const Size(double.infinity, 40),
                   ),
                   child: const Text("Display Student"),
                 
