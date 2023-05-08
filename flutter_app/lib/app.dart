@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/view/area_circle.dart';
 import 'package:flutter_app/view/arithmetic_view.dart';
+import 'package:flutter_app/view/class_exercise.dart';
 import 'package:flutter_app/view/column_view.dart';
 import 'package:flutter_app/view/container_screen.dart';
 import 'package:flutter_app/view/dashboard.dart';
 import 'package:flutter_app/view/display_name_view.dart';
 import 'package:flutter_app/view/edit_student_detail.dart';
 import 'package:flutter_app/view/load_image.dart';
+import 'package:flutter_app/view/media_query_view.dart';
 import 'package:flutter_app/view/output_view.dart';
 import 'package:flutter_app/view/rich_text_view.dart';
 import 'package:flutter_app/view/simple_interest.dart';
@@ -40,6 +42,8 @@ class App extends StatelessWidget {
         '/studentdetailview' : (context) => const StudentDetailView(),
         '/editstudentdetailview' : (context) => const EditStudentDetailview(),
         '/studentdetail' : (context) => const StudentsInfo(),
+         '/mediaquery' : (context) => const MediaQueryView(),
+         '/classexercise' : (context) => const ClassExercise(),
         
       },
       

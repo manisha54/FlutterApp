@@ -90,6 +90,18 @@ class DashboardView extends StatelessWidget {
               },
               child: const Text('Edit Student detail'),
             ),
+            ElevatedButton(
+              onPressed: () {
+               Navigator.pushNamed(context, '/mediaquery' );
+              },
+              child: const Text('Media Query'),
+            ),
+             ElevatedButton(
+              onPressed: () {
+               Navigator.pushNamed(context, '/classexercise' );
+              },
+              child: const Text('Class work'),
+            ),
           ],
         ),
       ),

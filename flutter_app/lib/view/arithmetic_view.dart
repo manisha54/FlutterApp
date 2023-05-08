@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/arithmetic.dart';
 
+import '../common/show_my_message.dart';
+
 //for radiobutton 
 enum Arithmeticc{add,sub}
 
@@ -170,6 +172,7 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                     child: ElevatedButton(
                       onPressed: () {
                         sub();
+                        showMysnackBar(context, '1.message', color: Colors.black);
                         
                       },
                       child: const Text('Sub'),
