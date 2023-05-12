@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/view/area_circle.dart';
 import 'package:flutter_app/view/arithmetic_view.dart';
+import 'package:flutter_app/view/card_list.dart';
 import 'package:flutter_app/view/class_exercise.dart';
 import 'package:flutter_app/view/column_view.dart';
 import 'package:flutter_app/view/container_screen.dart';
@@ -42,8 +43,10 @@ class App extends StatelessWidget {
         '/studentdetailview' : (context) => const StudentDetailView(),
         '/editstudentdetailview' : (context) => const EditStudentDetailview(),
         '/studentdetail' : (context) => const StudentsInfo(),
-         '/mediaquery' : (context) => const MediaQueryView(),
-         '/classexercise' : (context) => const ClassExercise(),
+        '/mediaquery' : (context) => const MediaQueryView(),
+        '/classexercise' : (context) => const ClassExercise(),
+        '/cardlist' : (context) => const CardList(),
+        
         
       },
       
