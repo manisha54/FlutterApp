@@ -1,19 +1,19 @@
 class Student {
-  int? studentId;
+  String? studentId;
   String? fname;
   String? lname;
   int? age;
   String? username;
   String? password;
-  String? batch;
+  String? batchId;
 
   Student({
-    this.studentId,
-    this.fname,
-    this.lname,
-    this.age,
-    this.username,
-    this.password,
-    this.batch,
+    required this.studentId,
+    required this.fname,
+    required this.lname,
+    required this.age,
+    required this.username,
+    required this.password,
+    required this.batchId,
   });
 }

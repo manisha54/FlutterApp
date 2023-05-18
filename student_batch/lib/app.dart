@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:student_batch/view/dashboard_view.dart';
 import 'package:student_batch/view/login_view.dart';
 import 'package:student_batch/view/register_view.dart';
+import 'package:student_batch/view/student_details_view.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -13,8 +14,9 @@ class App extends StatelessWidget {
       initialRoute: '/registerRoute',
       routes: {
       '/registerRoute': (context) => const RegisterView(),
-      '/loginRoute': (context) => const LoginView(),
+      '/loginRoute': (context) => const SignInView(),
       '/dashboardRoute': (context) => const DashboardView(),
+      '/studentDetailRoute': (context) => const StudentDetailView(),
       },
      
     );
