@@ -20,6 +20,8 @@ class _AddUserViewState extends State<AddUserView> {
 
   TimeOfDay? time = TimeOfDay.now();
   DateTime? date = DateTime.now();
+  
+
 
   @override
   Widget build(BuildContext context) {
@@ -64,13 +66,13 @@ class _AddUserViewState extends State<AddUserView> {
                 gap,
                 Row(
                   children: [
-                    const Text('Choose Date :    '),
+                    const Text('Date of birth :    '),
                     ElevatedButton(
                       onPressed: () async {
                         DateTime? newDate = await showDatePicker(
                           context: context,
                           initialDate: date!,
-                          firstDate: DateTime.now(),
+                          firstDate: DateTime(2000),
                           lastDate: DateTime.now(),
                         );
                         if (newDate != null) {
@@ -110,7 +112,14 @@ class _AddUserViewState extends State<AddUserView> {
                       User user =
                           User(id: id, name: name, date: date, time: time);
                       getIt<UserRepository>().addUser(user);
+                       ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('user added'),
+                      backgroundColor: Colors.green,
+                    ),
+                  );
                     },
+                    
                     child: const Text('Register User'),
                   ),
                 ),
@@ -122,8 +131,9 @@ class _AddUserViewState extends State<AddUserView> {
                         Navigator.pushNamed(context, '/displayUser');
                     },
                     child: const Text('View Users'),
-                  ),
+                  ),              
                 ),
+  
               ],
             ),
           ),
