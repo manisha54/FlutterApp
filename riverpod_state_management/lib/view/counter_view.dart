@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CounterView extends StatelessWidget {
+
+final numberProvider = StateProvider<int>((ref) =>100);
+
+
+class CounterView extends ConsumerWidget {
   const CounterView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return  Scaffold(
       appBar: AppBar(
         title: const Text('Counter'),
       ),
-      body: const Center(
+      body:  Center(
         child: Text(
-          '1',
-          style: TextStyle(
+          //Reading a provider
+          ref.watch(numberProvider).toString(),
+          style: const TextStyle(
             fontSize: 24,
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
+        onPressed: () => {
+          ref.read(numberProvider.notifier).state++,
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

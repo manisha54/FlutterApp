@@ -27,6 +27,10 @@ class _DashboardViewState extends State<DashboardView> {
               onPressed: () => Navigator.pushNamed(context, '/add'),
               child: const Text('Add'),
             ),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, '/si'),
+              child: const Text('si'),
+            ),
           ],
         ),
       ),
